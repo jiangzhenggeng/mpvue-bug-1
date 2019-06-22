@@ -1,6 +1,11 @@
+<style>
+  .btn:active {
+    background: green;
+  }
+</style>
 <template>
   <div>
-    <div @click="clickHandle">点击增加 currentIndex </div>
+    <div class="btn" @click="clickHandle">点击增加 currentIndex</div>
     <block v-for="(item,index) in list" :key="index">
       <test
         v-if="index==currentIndex"
@@ -17,9 +22,9 @@ export default {
   data () {
     return {
       currentIndex: 0,
-      list: (()=>{
+      list: (() => {
         let temp = []
-        for (let i=0;i<100;i++){
+        for (let i = 0; i < 100; i++) {
           temp.push(i)
         }
         return temp
